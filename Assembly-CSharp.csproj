@@ -46,6 +46,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Astroid.cs" />
+     <Compile Include="Assets\Scripts\Main.cs" />
      <Compile Include="Assets\Scripts\Move.cs" />
      <Compile Include="Assets\Scripts\ObjectOnClick.cs" />
      <Compile Include="Assets\Scripts\Ship.cs" />
