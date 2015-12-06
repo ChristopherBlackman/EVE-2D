@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Ship:MonoBehaviour
 {
+	private Vector2 currentPos;
 	private GameObject aShip;
 	private Move move;
 	private ShipCamera aCameraObject; 
@@ -23,9 +24,9 @@ public class Ship:MonoBehaviour
 	public void shipUpdate ()
 	{
 
-		//Debug.Log (anObject);
+		currentPos = new Vector2 (aShip.transform.position.x, aShip.transform.position.y);
 		move.shipUpdate ();
-		aCameraObject.cameraUpdatePos ( new Vector2 (aShip.transform.position.x,aShip.transform.position.y));
+		aCameraObject.cameraUpdatePos ( currentPos);
 		//add camera class that is givin the gameobject pos
 	}
 }

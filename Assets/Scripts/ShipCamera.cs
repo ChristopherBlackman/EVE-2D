@@ -17,7 +17,7 @@ class ShipCamera : MonoBehaviour {
 	
 	public void cameraUpdatePos (Vector2 a)
 	{
-		cameraDistance = cameraDistance + Input.GetAxis ("Mouse ScrollWheel");
+		cameraDistance = cameraDistance - Input.GetAxis ("Mouse ScrollWheel")*2;
 
 		//var camera = GetComponent<Camera> ();
 
