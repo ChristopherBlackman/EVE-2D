@@ -8,10 +8,10 @@ public class WorldGen{
 	// Use this for initialization
 	public WorldGen():this(1){}
 	public WorldGen(float aSeed):this(aSeed,2){} 
-	public WorldGen(float aSeed, int density)
+	public WorldGen(float aSeed, float density)
 	{
 		seed = 1;
-		numberOfObjects = density*1000;
+		numberOfObjects = (int)(density*1000);
 	}
 	public Astroid[] genWorld()
 	{

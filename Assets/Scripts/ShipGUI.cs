@@ -15,10 +15,10 @@ public class ShipGUI : MonoBehaviour {
 	}
 	public void update(float speed)
 	{
-		//(aGUI.GetComponent ("LocalSpeedOfShip") as Text).text =  "F_Us";
-		//(aGUI.GetComponent<Text> ()).text = "F_Us";//speed.ToString();
+		(aGUI.GetComponent ("LocalSpeedOfShip") as Text).text =  "F_Us";
+		(aGUI.GetComponent<Text> ()).text = "F_Us";//speed.ToString();
 		Text[] a = aGUI.GetComponentsInChildren<Text> ();
 		a [0].text = (Mathf.RoundToInt(speed*1000)).ToString () + " m/s";
-		Debug.Log (a.Length);
+		//Debug.Log (a.Length);
 	}
 }

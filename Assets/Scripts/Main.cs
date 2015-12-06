@@ -10,7 +10,7 @@ public class Main:MonoBehaviour
 	void Start () 
 	{
 		defaultShip = new Ship ();
-		astroids    = (new WorldGen(1,1)).genWorld();
+		astroids    = (new WorldGen(1,0.1f)).genWorld();
 	}
 	
 	// Update is called once per frame
