@@ -1,16 +1,18 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Main.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Astroid.cs">
     <Files>
-      <File FileName="Assets\Scripts\ShipCamera.cs" Line="20" Column="74" />
-      <File FileName="Assets\Scripts\Move.cs" Line="156" Column="14" />
-      <File FileName="Assets\Scripts\Ship.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TargetManager.cs" Line="38" Column="64" />
+      <File FileName="Assets\Scripts\Main.cs" Line="13" Column="34" />
+      <File FileName="Assets\Scripts\ShipCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Move.cs" Line="149" Column="3" />
+      <File FileName="Assets\Scripts\Ship.cs" Line="31" Column="34" />
+      <File FileName="Assets\Scripts\TargetManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Target.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ObjectOnClick.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Main.cs" Line="13" Column="15" />
-      <File FileName="Assets\Scripts\Astroid.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Astroid.cs" Line="9" Column="23" />
       <File FileName="Assets\Scripts\WorldGen.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\ShipGUI.cs" Line="21" Column="44" />
+      <File FileName="Assets\Scripts\Targets.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

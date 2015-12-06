@@ -44,6 +44,11 @@ class Move:MonoBehaviour {
 
 
 	}
+
+	public float getSpeed()
+	{
+		return speed;
+	}
 	
 	private void ajustSpeed()
 	{

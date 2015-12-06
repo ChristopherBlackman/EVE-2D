@@ -14,8 +14,8 @@ public class Astroid : MonoBehaviour {
 	{
 		Type = a;
 		LocationInfo = b;
-		astroid = Instantiate (Resources.Load ("Astroid_" + a) as GameObject);
 		astroid.transform.position = b;
+		astroid = Instantiate (Resources.Load ("Astroid_" + a) as GameObject);
 		//volume = new Random () * 100 + 1;
 	}
 	public void upadatePos (Vector2 x)
