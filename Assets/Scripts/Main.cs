@@ -9,7 +9,8 @@ public class Main:MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-		defaultShip = new Ship ();
+        defaultShip = new Ship ();
+        //defaultShip = gameObject.AddComponent<Ship>() as Ship;
 		astroids    = (new WorldGen(1,0.1f)).genWorld();
 	}
 	

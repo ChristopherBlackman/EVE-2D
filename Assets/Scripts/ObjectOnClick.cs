@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObjectOnClick : MonoBehaviour {
+public class ObjectOnClick
+{
 
 	// Use this for initialization
 	void Start () {

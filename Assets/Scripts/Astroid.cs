@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Astroid : MonoBehaviour {
+public class Astroid :MonoBehaviour
+{
 
 	private string type;
 	private GameObject astroid;

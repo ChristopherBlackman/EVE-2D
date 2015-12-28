@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Targets : MonoBehaviour {
+public class Targets {
 
 	// Use this for initialization
 	void Start () {

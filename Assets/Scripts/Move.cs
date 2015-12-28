@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 //add a function that creates acceleration and deceleration adding to whe it turns and does not turn
-class Move:MonoBehaviour {
+class Move
+{
 
 	private bool turn ;
 	private float transverseSpeed ;
+    private const float TRASVERSE_MAX = 1f;
 	private float turnAngle ;
 	private float deltaAngle;
 	private bool oneClick;
@@ -30,7 +32,7 @@ class Move:MonoBehaviour {
 		timeLeftOfClick = 0.0f;
 		speed = 0.0f;
 		a = j;
-		Debug.Log(a.transform.Find("/OrangeShip/aShip"));
+		//Debug.Log(a.transform.Find("/OrangeShip/aShip"));
 
 		
 	}
@@ -93,18 +95,30 @@ class Move:MonoBehaviour {
 			turn = true;
 
 			//find which directio to turn
-			transverseSpeed = (deltaAngle > 0 ) ? -1.5f : 1.5f;
+			transverseSpeed = (deltaAngle > 0 ) ? -TRASVERSE_MAX : TRASVERSE_MAX;
 		}
 
 		//determines if the ship should continue the turn or not
 		if (turn)
 		{
-			bool continueTurn = !(deltaAngle > -2 && deltaAngle < 2);
+            bool continueTurn = !(deltaAngle > -2 && deltaAngle < 2);
 			
 			if (continueTurn)
 			{
-				a.transform.rotation = Quaternion.Euler(0, 0, angleBefore + transverseSpeed);
-				deltaAngle= deltaAngle + transverseSpeed;
+                //finds the ratio of a f(x) being speed
+                //f(x) = x / 100
+                //g(x) = a  * f(x)
+                float speedRatio = speed * 22.24f;
+                //note* x = g(x) and g(x) is ajusted speed
+                //f(x) = ( 1/3 * x^3 ) - ( 3/2 * x^2 ) + (2 * x)
+                float changeInAngle = (Mathf.Pow(speedRatio, 3) / 3) - (Mathf.Pow(speedRatio, 2) * 3 / 2) + 2 * speedRatio + 0;
+                Debug.Log(transverseSpeed);
+
+                a.transform.rotation = Quaternion.Euler(0, 0, angleBefore + transverseSpeed*changeInAngle);
+                deltaAngle = deltaAngle + transverseSpeed * changeInAngle;
+
+                //a.transform.rotation = Quaternion.Euler(0, 0, angleBefore + transverseSpeed*speed);
+				//deltaAngle= deltaAngle + transverseSpeed*transverseSpeed * speed;
 				//moveShip();
 			}
 			else
@@ -147,17 +161,14 @@ class Move:MonoBehaviour {
 	{
 		//if the ship is turning then slow the ship down
 
-		if (turn && speed > 0.03) 
+		if (turn && speed > 0.06) 
 		{
-			speed = speed - 0.0011f;
+            speed = speed * 0.9980f;
 		}
-		else if (speed > 0 && speed < 0.04){} 
-		else if (turn  && speed <= 0.04) 
-		{
-			speed = 0.03f;
-		}
-
-		//transform the pos of the ship
+        if(turn && speed < 0.02)
+        {
+            speed = -1f * (speed + 0.001f) * (speed - 0.02f) + speed;
+        }
 		a.transform.position = a.transform.position + a.transform.TransformVector (0, speed, 0);
 	}
 

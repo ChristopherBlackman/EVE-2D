@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WorldGen{
-
+public class WorldGen
+{
 	private float seed;
 	private int numberOfObjects;
 	// Use this for initialization
-	public WorldGen():this(1){}
+	public WorldGen():this(1f){}
 	public WorldGen(float aSeed):this(aSeed,2){} 
 	public WorldGen(float aSeed, float density)
 	{
-		seed = 1;
+		seed = aSeed;
 		numberOfObjects = (int)(density*1000);
 	}
 	public Astroid[] genWorld()
