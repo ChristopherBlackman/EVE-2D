@@ -13,7 +13,17 @@ public class ShipGUI : MonoBehaviour {
     // Use this for initialization
     public ShipGUI() : this(600f) { }
     public ShipGUI(float width) : this(width, 400f) { }
-    public ShipGUI(float width, float length) : this(width, length, 0f) { }
+    public ShipGUI(float width, float length)
+    {
+        aGUI = Instantiate(Resources.Load("Ship_GUI") as GameObject);
+
+        laSpeed = aGUI.gameObject.transform.GetChild(0).gameObject;
+        aGUI.GetComponent<RectTransform>().sizeDelta = new Vector2(width, length);
+
+        txtSpeed = laSpeed.GetComponent<Text>();
+        txtSpeed.resizeTextForBestFit = false;
+        txtSpeed.raycastTarget = false;
+    }
     public ShipGUI(float width, float length, float marginX) : this(width, length, marginX, 0f) { }
     public ShipGUI(float width, float length, float marginX, float marginY)
 	{
@@ -26,7 +36,7 @@ public class ShipGUI : MonoBehaviour {
         //laSpeed.transform.position = new Vector3(500f,0f, 0f);
         laSpeed.GetComponent<RectTransform>().anchoredPosition = new Vector3(marginX + (width/(-2)), marginY + (length/(-2)), 0f);
         txtSpeed = laSpeed.GetComponent<Text>();
-        txtSpeed.resizeTextForBestFit = true;
+        txtSpeed.resizeTextForBestFit = false;
         txtSpeed.raycastTarget = false;
 
         //txtSpeed.alignment = 

@@ -13,7 +13,7 @@ public class Ship:MonoBehaviour
 		GameObject prefab = Resources.Load ("OrangeShip") as GameObject;
 		GameObject prefab1 = Resources.Load ("aCamera") as GameObject;
 
-        aGUI = new ShipGUI(600f, 400f, 10f, -15f);
+        aGUI = new ShipGUI(600f, 400f);
 		aShip = Instantiate(prefab);
 		aShip.transform.position = new Vector3 (0, 0, 1);
 		move = new Move (aShip);

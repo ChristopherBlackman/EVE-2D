@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Main:MonoBehaviour
 	{
+
 	Ship defaultShip;
-	Astroid[] astroids;
+    Astroid[] astroids;
 
 	// Use this for initialization
 	void Start () 
